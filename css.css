@@ -12,8 +12,7 @@ body {
     height: 100%;
     position: relative;
 }
-
-.left {
+#left {
     width: 50%;
     height: 80%;
     margin: 10vh 0 0 0;
@@ -24,7 +23,7 @@ body {
     position: relative;
 }
 
-.right {
+#right {
     width: 50%;
     height: 80%;
     margin: 10vh 0 0 0;
@@ -53,10 +52,10 @@ body {
     display:inline-block;
 }
 
-#user_name{
+.user_name{
     font-family: "Roboto", sans-serif;
 }
-#text{
+.text{
     position: relative;
     box-sizing: border-box;
     margin-top: 7%;
@@ -64,7 +63,7 @@ body {
     text-align: left;
 }
 
-#retweets{
+.retweets{
     margin-top: 14%;
     margin-left: 5%;
 }
