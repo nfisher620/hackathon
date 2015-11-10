@@ -14,15 +14,12 @@ function Tweet(user_id, if_retweeted, retweet_count, body_text, username){
         }
     }
     self.set_win_status = function(win_total){
-        if(self.win_total == 1){
+        if(win_total == 1){
             self.win_status = 'Amateur Tweeter'
         }
-        else if(self.win_total >= 3){
+        else if(win_total >= 3){
             self.win_status = 'Master Tweeter'
         }
     }
 }
 
-
-var test_winner = new Tweet(2, true, 3, 'helloworld', 'coolguy');
-console.log(test_winner);
