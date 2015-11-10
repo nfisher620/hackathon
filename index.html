@@ -9,40 +9,39 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
+    <script src="api-obj.js"></script>
     <link rel="stylesheet" href="css.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script src="global_vars.js"></script>
+    <script src="Tweet.js"></script>
+    <script src="Winner.js"></script>
+    <script src="main.js"></script>
 
 </head>
 <body>
     <div class="container-fluid">
         <h1>Flick-a-Tweet</h1>
-        <div class="left">
+
+        <div class="tweet_container" id="left">
 
             <div class="tweet">
-                <img class='tweet_content' src="images/tweet-clear.png">
-                <div class='tweet_content' id="user_name">username</div>
-                <div class='tweet_content' id="text">Tweet: main body text. HelloworldHelloworld
-                    HelloworldHelloworldHelloworldHelloworldHelloworld
-                    HelloworldHelloworldHelloworldHelloworldHelloworld
-                </div>
-                <div class='tweet_content' id="retweets">retweet count: 5</div>
-                <div class="star"></div>
+                <img class='tweet_content tweet-img' src="images/tweet-clear.png">
+                <div class='tweet_content' id="user_name"></div>
+                <div class='tweet_content' id="text"></div>
+                <div class='tweet_content' id="retweets"></div>
             </div>
 
         </div>
-        <div class="right">
+        <div class="tweet_container" id="right">
             <div class="tweet">
-                <img class='tweet_content' src="images/tweet-clear.png">
-                <div class='tweet_content' id="user_name">username</div>
-                <div class='tweet_content' id="text">Tweet: main body text. HelloworldHelloworld
-                    HelloworldHelloworldHelloworldHelloworldHelloworld
-                    HelloworldHelloworldHelloworldHelloworldHelloworld
-                </div>
-                <div class='tweet_content' id="retweets">retweet count: 5</div>
-                <div class="star"></div>
+                <img class='tweet_content tweet-img' src="images/tweet-clear.png">
+                <div class='tweet_content user_name'></div>
+                <div class='tweet_content text'></div>
+                <div class='tweet_content retweets'></div>
             </div>
         </div>
+        <input type="search" class="search" value="enter name">
+        <button type="submit" id="search_btn"></button>
     </div>
 </body>
 </html>
