@@ -37,6 +37,7 @@ $(document).ready(function(){
 });
 
 function set_tweets(){
+    var output_arr = [];
     var query_str = $('#search_query').val();
     var tweet_left_info = get_tweet(query_str);
     var left_tweet = new Tweet(1,
@@ -45,6 +46,7 @@ function set_tweets(){
         tweet_left_info[2],
         tweet_left_info[3]);
     console.log(left_tweet);
+    output_arr.push(left_tweet);
     var tweet_right_info = get_tweet(query_str);
     var right_tweet = new Tweet(1,
         tweet_left_info[0],
@@ -52,6 +54,12 @@ function set_tweets(){
         tweet_left_info[2],
         tweet_left_info[3]);
     console.log(right_tweet);
+    output_arr.push(right_tweet);
+    return output_arr;
+}
+
+function display_tweets(){
+
 }
 
 $('tweet').on('click','star', function(){
