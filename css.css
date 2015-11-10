@@ -30,5 +30,12 @@ body {
     background: #70C3FF;
 }
 
+.tweet {
+    width: 50%;
+    height: 40%;
+    transform: translate(50%, 60%);;
+    background: white url('images/tweet-clear.png') no-repeat;
+    background-size: 10%;
+}
 
 
