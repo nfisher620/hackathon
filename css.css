@@ -67,7 +67,7 @@ h1{
 .star {
     width: 70px;
     height: 50px;
-    background: url(images/nicoles-star.png) no-repeat;
+    background: url(images/twitter_fave.png) no-repeat;
     background-position: 0 0;
     cursor: pointer;
     animation:1s steps(55);
