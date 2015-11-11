@@ -155,7 +155,9 @@ section, section div {
     transition-duration: .6s;
 }
 
-section, .button { transition-timing-function: ease; }
+section, .button {
+    transition-timing-function: ease;
+}
 
 section {
     display: inline-block;
@@ -169,7 +171,9 @@ section {
     margin-top: 1%;
 }
 /* adjusted margin to line up better visually */
-.button { opacity: 0; margin-top: -4%; }
+.button {
+    opacity: 0; margin-top: -4%;
+}
 /* changed font to Roboto to match other fonts */
 .cover {
     position: absolute;
@@ -185,7 +189,9 @@ section {
 
 }
 
-.innie, .outie, .spine, .shadow { position: absolute; width: 100%; }
+.innie, .outie, .spine, .shadow {
+    position: absolute; width: 100%;
+}
 /* adjusted border-radius to better match search button */
 .innie, .outie {
     height: 100%;
@@ -193,7 +199,9 @@ section {
     border-radius: .50rem;
 }
 
-.innie:after, .outie:after { content:"Enter Keyword"; margin-bottom: 1%;}
+.innie:after, .outie:after {
+    content:"Enter Keyword"; margin-bottom: 1%;
+}
 
 .innie {
     background-color: #67E2FE;
