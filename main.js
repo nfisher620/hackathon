@@ -3,10 +3,13 @@ var debug = true;
 function get_tweet(query, side){
     if(debug) console.log('query is: ',query);
     apis.twitter.getData(query, function(success,response){
+
+
         var success = success;
         if(debug) console.log('success is: ', success);
         var response = response;
         if(debug) console.log('response is: ', response);
+
 
         var english_tweets_arr = [];
 
@@ -16,8 +19,9 @@ function get_tweet(query, side){
             }
         }
 
-        var rand_num1 = Math.floor(Math.random() * english_tweets_arr.length);
 
+
+        var rand_num1 = Math.floor(Math.random() * english_tweets_arr.length);
 
         var retweet_count = response.tweets.statuses[rand_num1].retweet_count;
         if(debug) console.log('retweet count is: ', retweet_count);
