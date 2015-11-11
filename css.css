@@ -228,16 +228,30 @@ section {
     text-shadow: 0 2px 4px rgba(0,0,0,.2);
 }
 
-section:hover { background: #EBEFF2; }
-section:hover .button { opacity: 1; }
+section:hover {
+    background: #EBEFF2;
+}
+section:hover .button {
+    opacity: 1;
+}
 
-section:hover .cover, section:hover .innie, section:hover .spine, section:hover .outie, section:hover .spine { transition-timing-function: cubic-bezier(.2,.7,.1,1.1); }
+section:hover .cover, section:hover .innie, section:hover .spine, section:hover .outie, section:hover .spine {
+    transition-timing-function: cubic-bezier(.2,.7,.1,1.1);
+}
 
-section:hover .cover { transform: rotateX(-120deg);  }
+section:hover .cover {
+    transform: rotateX(-120deg);
+}
 
-section:hover .innie { background-color: #3ADAFC; }
-section:hover .spine { background-color: #52B1E0; }
-section:hover .outie { background-color: #2174A0; color: rgba(255,255,255,0); }
+section:hover .innie {
+    background-color: #3ADAFC;
+}
+section:hover .spine {
+    background-color: #52B1E0;
+}
+section:hover .outie {
+    background-color: #2174A0; color: rgba(255,255,255,0);
+}
 
 section:hover .shadow {
     opacity: 1;
