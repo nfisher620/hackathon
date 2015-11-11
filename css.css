@@ -155,7 +155,9 @@ section, section div {
     transition-duration: .6s;
 }
 
-section, .button { transition-timing-function: ease; }
+section, .button {
+    transition-timing-function: ease;
+}
 
 section {
     display: inline-block;
@@ -169,7 +171,9 @@ section {
     margin-top: 1%;
 }
 /* adjusted margin to line up better visually */
-.button { opacity: 0; margin-top: -4%; }
+.button {
+    opacity: 0; margin-top: -4%;
+}
 /* changed font to Roboto to match other fonts */
 .cover {
     position: absolute;
@@ -185,7 +189,9 @@ section {
 
 }
 
-.innie, .outie, .spine, .shadow { position: absolute; width: 100%; }
+.innie, .outie, .spine, .shadow {
+    position: absolute; width: 100%;
+}
 /* adjusted border-radius to better match search button */
 .innie, .outie {
     height: 100%;
@@ -193,7 +199,9 @@ section {
     border-radius: .50rem;
 }
 
-.innie:after, .outie:after { content:"Enter Keyword"; margin-bottom: 1%;}
+.innie:after, .outie:after {
+    content:"Enter Keyword"; margin-bottom: 1%;
+}
 
 .innie {
     background-color: #67E2FE;
@@ -228,16 +236,30 @@ section {
     text-shadow: 0 2px 4px rgba(0,0,0,.2);
 }
 
-section:hover { background: #EBEFF2; }
-section:hover .button { opacity: 1; }
+section:hover {
+    background: #EBEFF2;
+}
+section:hover .button {
+    opacity: 1;
+}
 
-section:hover .cover, section:hover .innie, section:hover .spine, section:hover .outie, section:hover .spine { transition-timing-function: cubic-bezier(.2,.7,.1,1.1); }
+section:hover .cover, section:hover .innie, section:hover .spine, section:hover .outie, section:hover .spine {
+    transition-timing-function: cubic-bezier(.2,.7,.1,1.1);
+}
 
-section:hover .cover { transform: rotateX(-120deg);  }
+section:hover .cover {
+    transform: rotateX(-120deg);
+}
 
-section:hover .innie { background-color: #3ADAFC; }
-section:hover .spine { background-color: #52B1E0; }
-section:hover .outie { background-color: #2174A0; color: rgba(255,255,255,0); }
+section:hover .innie {
+    background-color: #3ADAFC;
+}
+section:hover .spine {
+    background-color: #52B1E0;
+}
+section:hover .outie {
+    background-color: #2174A0; color: rgba(255,255,255,0);
+}
 
 section:hover .shadow {
     opacity: 1;
