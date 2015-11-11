@@ -78,7 +78,12 @@ $(document).ready(function(){
         var query_str = $('#search_query').val();
         get_tweet(query_str, 'left');
         get_tweet(query_str, 'right');
-    })
+        // added class removes so when the user clicks for the next search the choice is effectively reset
+        $('.right-container').removeClass('r-active');
+        $('.left-container').removeClass('active');
+        //added tweet sound on search
+        $('#audio').trigger('play');
+    });
 
     $('.star-left').on('click', function(){
         var query_str = $('#search_query').val();
@@ -93,7 +98,4 @@ $(document).ready(function(){
         get_tweet(query_str,'left');
     });
 });
-
-
-
 
