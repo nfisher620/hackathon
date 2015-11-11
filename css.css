@@ -11,30 +11,28 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
+    font-family: "Roboto", sans-serif;
 }
-#left {
+
+.tweet_container {
     width: 50%;
     height: 80%;
     margin: 10vh 0 0 0;
-    background-color: #48ACF2;
+    background-color: #70C3FF;
     border: 1px solid lightgray;
-    float: left;
-    box-shadow: -5px 5px 5px black;
     position: relative;
+}
+
+#left {
+    float: left;
 }
 
 #right {
-    width: 50%;
-    height: 80%;
-    margin: 10vh 0 0 0;
-    border: 1px solid lightgray;
     float: right;
-    background: #70C3FF;
-    position: relative;
 }
 
 .tweet {
-    position:relative;
+    position: relative;
     width: 50%;
     height: 30%;
     transform: translate(50%, 100%);;
@@ -42,24 +40,16 @@ body {
     border-radius: 15px;
 }
 
+.tweet:hover {
+    width: 60%;
+    height: 40%;
+    box-shadow: -5px 5px 5px black;
+    transform: translate(35%, 60%);
+    transition: 0.25s linear;
+}
+
 .tweet_content{
     display:inline-block;
-}
-
-#user_name{
-    font-family: Arial, Helvetica, sans-serif;
-}
-#text{
-    position: relative;
-    box-sizing: border-box;
-    margin-top: 7%;
-    margin-left: 5%;
-    text-align: left;
-}
-
-#retweets{
-    margin-top: 14%;
-    margin-left: 5%;
 }
 
 h1{
@@ -72,6 +62,7 @@ h1{
     position: absolute;
 
 }
+
 .star {
     width: 70px;
     height: 50px;
@@ -80,15 +71,17 @@ h1{
     cursor: pointer;
     animation:1s steps(55);
     float:right;
+    border-radius: 15px;
 }
+
 .star:hover {
     background-position: -3519px 0;
     transition: background 1s steps(55);
 }
 
 .tweet-img {
-    top: 10px;
-    left: 10px;
+    top: 3%;
+    left: 3%;
     position: absolute;
 }
 
@@ -97,19 +90,25 @@ h1{
 }
 
 .user_name{
-    font-family: "Roboto", sans-serif;
+    position: absolute;
+    top: 6%;
+    left: 18%;
+    font-weight: bold;
 }
+
 .text{
-    position: relative;
+    position: absolute;
     box-sizing: border-box;
-    margin-top: 7%;
-    margin-left: 10%;
     text-align: left;
+    top: 31%;
+    left: 13%;
 }
 
 .retweets{
-    margin-top: 14%;
-    margin-left: 5%;
+    position: absolute;
+    bottom: 7%;
+    left: 14%;
+    font-size: 0.7em;
 }
 
 .search {
@@ -117,3 +116,113 @@ h1{
     border-radius: 5px;
 }
 
+.btn {
+    background-color: #2EC8FA;
+    color: white;
+}
+
+.active {
+    background: #48ACF2;
+    box-shadow: -5px 5px 5px black;
+}
+
+.r-active {
+    background-color: #48ACF2;
+    box-shadow: 5px 5px 5px black;
+}
+
+
+section, section div {
+    /* See it in slo-mo, you can change this */
+    transition-duration: .6s;
+}
+
+section, .button { transition-timing-function: ease; }
+
+section {
+    display: inline-block;
+    position: relative;
+    padding: .375rem .375rem 0;
+    height: 2.5rem;
+    background: #A9ADB6;
+    border-radius: .25rem;
+    perspective: 300;
+    box-shadow: 0 -1px 2px #fff, inset 0 1px 2px rgba(0,0,0,.2), inset 0 .25rem 1rem rgba(0,0,0,.1);
+    margin-top: 1%;
+}
+
+
+.button { opacity: 0; }
+
+.cover {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    transform-origin: center bottom;
+    transform-style: preserve-3d;
+    font: 1.25em/2 "icon";
+    color: white;
+    text-align: center;
+    pointer-events: none;
+    z-index: 100;
+    padding-bottom:35px;
+}
+
+
+
+.innie, .outie, .spine, .shadow { position: absolute; width: 100%; }
+
+.innie, .outie {
+    height: 100%;
+    background-image: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,.1) 100%);
+    border-radius: .25rem;
+}
+.innie:after, .outie:after { content:"Enter Name"; margin-bottom: 1%;}
+
+.innie {
+    background-color: #67E2FE;
+    text-shadow: 0 -2px 4px rgba(0,0,0,.2);
+}
+
+.spine {
+    top: .25rem;
+    background: #20C7F3;
+    height: .25rem;
+    transform: rotateX(90deg);
+    transform-origin: center top;
+}
+
+.shadow {
+    top: 100%;
+    left: 0;
+    height: 3.5rem;
+    transform-origin: center top;
+    transform: rotateX(90deg);
+    opacity: 0;
+    z-index: 0;
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,.6) 0%, transparent 100%);
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.6) 0%, transparent 100%);
+    border-radius: .4rem;
+
+}
+
+.outie {
+    background-color: #2EC8FA;
+    transform: translateZ(.25rem);
+    text-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+section:hover { background: #EBEFF2; }
+section:hover .button { opacity: 1; }
+
+section:hover .cover, section:hover .innie, section:hover .spine, section:hover .outie, section:hover .spine { transition-timing-function: cubic-bezier(.2,.7,.1,1.1); }
+
+section:hover .cover { transform: rotateX(-120deg);  }
+
+section:hover .innie { background-color: #3ADAFC; }
+section:hover .spine { background-color: #52B1E0; }
+section:hover .outie { background-color: #2174A0; color: rgba(255,255,255,0); }
+
+section:hover .shadow {
+    opacity: 1;
+    transform: rotateX(45deg) scale(.95);
+}
