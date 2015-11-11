@@ -66,7 +66,7 @@ function get_tweet(query, side){
  * @param {tweet} the new tweet object that is created to be displayed onto the DOM
  */
 function display_right_tweet(tweet){
-    if(debug) console.log('display tweets called');
+    if(debug) console.log('display right tweet called');
     $('#r_user').text(tweet.username);
     $('#r_text').text(tweet.body_text);
     $('#r_retweets').text(tweet.retweet_count);}
@@ -75,7 +75,7 @@ function display_right_tweet(tweet){
  * @param {tweet} the new tweet object that is created to be displayed onto the DOM
  */
 function display_left_tweet(tweet){
-    if(debug) console.log('display tweets called');
+    if(debug) console.log('display left tweet called');
     $('#l_user').text(tweet.username);
     $('#l_text').text(tweet.body_text);
     $('#l_retweets').text(tweet.retweet_count);
