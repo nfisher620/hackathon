@@ -42,19 +42,19 @@ body {
 
 /* on hover set up to make selections pop */
 .left-tweet:hover {
-    width: 70%;
-    height: 60%;
+    width: 65%;
+    height: 55%;
     box-shadow: -5px 5px 5px 1px black, -1em 0 0.4em #244458;
-    transform: translate(22%, 32%);
+    transform: translate(27%, 35%);
     transition: 0.25s linear;
 }
 /* added right side animation to be more consistent with design,
    added second box shadow for a more 3d look */
 .right-tweet:hover {
-    width: 70%;
-    height: 60%;
+    width: 65%;
+    height: 55%;
     box-shadow: 5px 5px 5px 1px black, 1em 0 0.4em #244458;
-    transform: translate(22%, 32%);
+    transform: translate(27%, 35%);
     transition: 0.25s linear;
 }
 
