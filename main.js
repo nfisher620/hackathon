@@ -1,61 +1,101 @@
-var winner;
+var debug = true;
 
-function get_tweet(query){
-    var tweet_arr = [];
-    var output_arr = [];
-    var search_param = String(query);
-    apis.twitter.getData(search_param, function(success,response){
+function get_tweet(query, side){
+    if(debug) console.log('query is: ',query);
+    apis.twitter.getData(query, function(success,response){
+
+
         var success = success;
-        console.log(success);
+        if(debug) console.log('success is: ', success);
         var response = response;
-        console.log(response);
-        var rand_num = Math.floor(Math.random() * 14);
-        if(response.tweets.statuses[rand_num]){
-            var if_retweeted = response.tweets.statuses[rand_num].retweeted;
-            console.log(if_retweeted);//logs a bool for first tweet in response obj
-            output_arr.push(if_retweeted);
-            var retweet_count = response.tweets.statuses[rand_num].retweet_count;
-            console.log(retweet_count);//logs the retweet count for first tweet in response obj
-            output_arr.push(retweet_count);
-            var body_text = response.tweets.statuses[rand_num].text;
-            console.log(body_text);//logs the main text for first tweet in response obj
-            output_arr.push(body_text);
-            var username = response.tweets.statuses[rand_num].user.name;
-            console.log(username);//logs the username for first tweet in response obj
-            output_arr.push(username);
+        if(debug) console.log('response is: ', response);
+
+
+        var english_tweets_arr = [];
+
+        for(var i=0; i<response.tweets.statuses.length;i++){//finds all tweets in English and stores in array
+            if(response.tweets.statuses[i].metadata.iso_language == 'en'){
+                english_tweets_arr.push(response.tweets.statuses[i])
+            }
+        }
+
+
+
+        var rand_num1 = Math.floor(Math.random() * english_tweets_arr.length);
+
+        var retweet_count = response.tweets.statuses[rand_num1].retweet_count;
+        if(debug) console.log('retweet count is: ', retweet_count);
+
+        var body_text = response.tweets.statuses[rand_num1].text;
+        if(debug) console.log('body_text is: ', body_text);
+
+        var username = response.tweets.statuses[rand_num1].user.name;
+        if(debug) console.log('username is: ', username);
+
+        var new_tweet1 = new Tweet(retweet_count, body_text, username);
+
+        var rand_num2 = rand_num1 + 1;
+
+        var retweet_count = response.tweets.statuses[rand_num2].retweet_count;
+        if(debug) console.log('retweet_count is: ', retweet_count);
+
+        var body_text = response.tweets.statuses[rand_num2].text;
+        if(debug) console.log('body_text is: ', body_text);
+
+        var username = response.tweets.statuses[rand_num2].user.name;
+        if(debug) console.log('username is: ', username);
+
+        var new_tweet2 = new Tweet(retweet_count, body_text, username);
+
+        if(side == 'left'){
+            display_left_tweet(new_tweet1);
+            if(debug) console.log('left side called', response);
+        }
+        else if(side == 'right'){
+            display_right_tweet(new_tweet2);
+            if(debug) console.log('right side called', response);
         }
     })
-    return output_arr;// if_retweeted, retweet_count, body_text, username
 }
+
+function display_right_tweet(tweet){
+    if(debug) console.log('display tweets called');
+    $('#r_user').text(tweet.username);
+    $('#r_text').text(tweet.body_text);
+    $('#r_retweets').text(tweet.retweet_count);}
+
+function display_left_tweet(tweet){
+    if(debug) console.log('display tweets called');
+    $('#l_user').text(tweet.username);
+    $('#l_text').text(tweet.body_text);
+    $('#l_retweets').text(tweet.retweet_count);
+}
+
 
 $(document).ready(function(){
-    console.log('doc ready');
+    if(debug) console.log('doc ready');
     $('#search_btn').on('click', function(){
-        set_tweets();
-    })
+        var query_str = $('#search_query').val();
+        get_tweet(query_str, 'left');
+        get_tweet(query_str, 'right');
+        $('.right-container').removeClass('r-active');
+        $('.left-container').removeClass('active');
+    });
 
+    $('.star-left').on('click', function(){
+        var query_str = $('#search_query').val();
+        $('.left-container').addClass('active');
+        $('.right-container').removeClass('r-active');
+        get_tweet(query_str,'right');
+    });
+    $('.star-right').on('click', function(){
+        var query_str = $('#search_query').val();
+        $('.left-container').removeClass('active');
+        $('.right-container').addClass('r-active');
+        get_tweet(query_str,'left');
+    });
 });
 
-function set_tweets(){
-    var query_str = $('#search_query').val();
-    var tweet_left_info = get_tweet(query_str);
-    var left_tweet = new Tweet(1,
-        tweet_left_info[0],
-        tweet_left_info[1],
-        tweet_left_info[2],
-        tweet_left_info[3]);
-    console.log(left_tweet);
-    var tweet_right_info = get_tweet(query_str);
-    var right_tweet = new Tweet(1,
-        tweet_left_info[0],
-        tweet_left_info[1],
-        tweet_left_info[2],
-        tweet_left_info[3]);
-    console.log(right_tweet);
-}
 
-$('tweet').on('click','star', function(){
-
-});
 
 
