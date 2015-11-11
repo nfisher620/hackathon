@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Tweet On Fleek</title>
 
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -16,32 +16,47 @@
     <script src="Tweet.js"></script>
     <script src="Winner.js"></script>
     <script src="main.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.star-left').on('click', function(){
+                $('.left-container').addClass('active');
+                $('.right-container').removeClass('r-active');
+            });
+
+            $('.star-right').on('click', function(){
+                $('.left-container').removeClass('active');
+                $('.right-container').addClass('r-active');
+            });
+        });
+    </script>
 
 </head>
 <body>
     <div class="container-fluid">
-        <h1>Flick-a-Tweet</h1>
+        <h1>Tweet On Fleek</h1>
 
-        <div class="tweet_container" id="left">
+        <div class="tweet_container left-container" id="left">
 
             <div class="tweet">
                 <img class='tweet_content tweet-img' src="images/tweet-clear.png">
-                <div class='tweet_content user_name'></div>
-                <div class='tweet_content text'></div>
-                <div class='tweet_content retweets'></div>
+                <div class='tweet_content user_name'>asdfsdf</div>
+                <div class='tweet_content text'>asdfasdf</div>
+                <div class='tweet_content retweets'><span id="l-retweets"></span> RETWEETS</div>
+                <div class="star star-left"></div>
             </div>
 
         </div>
-        <div class="tweet_container" id="right">
+        <div class="tweet_container right-container" id="right">
             <div class="tweet">
                 <img class='tweet_content tweet-img' src="images/tweet-clear.png">
                 <div class='tweet_content user_name'></div>
                 <div class='tweet_content text'></div>
-                <div class='tweet_content retweets'></div>
+                <div class='tweet_content retweets'><span id="r-retweets"></span> RETWEETS</div>
+                <div class="star star-right"></div>
             </div>
         </div>
         <input type="search" class="search" value="enter name">
-        <button type="submit" id="search_btn"></button>
+        <button type="button" class="btn button-default btn-sm" id="search_btn">Search</button>
     </div>
 </body>
 </html>
