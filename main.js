@@ -59,3 +59,8 @@ $('tweet').on('click','star', function(){
 });
 
 
+$("#left").on({click:function(){
+    $("#left").addClass("boxshadow");
+}
+})
+
