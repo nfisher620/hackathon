@@ -177,7 +177,7 @@ section {
     background-image: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,.1) 100%);
     border-radius: .25rem;
 }
-.innie:after, .outie:after { content:"Enter Name"; margin-bottom: 1%;}
+.innie:after, .outie:after { content:"Search"; margin-bottom: 1%;}
 
 .innie {
     background-color: #67E2FE;
