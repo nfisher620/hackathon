@@ -78,6 +78,7 @@ $(document).ready(function(){
         var query_str = $('#search_query').val();
         get_tweet(query_str, 'left');
         get_tweet(query_str, 'right');
+        // added class removes so when the user clicks for the next search the choice is effectively reset
         $('.right-container').removeClass('r-active');
         $('.left-container').removeClass('active');
     });

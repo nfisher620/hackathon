@@ -25,23 +25,31 @@
 <body>
     <div class="container-fluid">
         <h1>Tweet On Fleek</h1>
-
+        <!-- left half of tweet board -->
         <div class="tweet_container left-container" id="left">
-
+            <!-- mock tweet design -->
             <div class="tweet left-tweet">
                 <img class='tweet_content tweet-img' src="images/tweet-clear.png">
+                <!-- append user name -->
                 <div class='tweet_content user_name' id="l_user"></div>
+                <!-- append tweet text -->
                 <div class='tweet_content text' id="l_text"></div>
+                <!-- append tweet count to span -->
                 <div class='tweet_content retweets'><span id="l_retweets">0</span> RETWEETS</div>
                 <div class="star star-left"></div>
             </div>
 
         </div>
+        <!-- right half of tweet board -->
         <div class="tweet_container right-container" id="right">
+            <!-- mock tweet design -->
             <div class="tweet right-tweet">
                 <img class='tweet_content tweet-img' src="images/tweet-clear.png">
+                <!-- append user name -->
                 <div class='tweet_content user_name' id="r_user"></div>
+                <!-- append tweet text -->
                 <div class='tweet_content text' id="r_text"></div>
+                <!-- append tweet count to span -->
                 <div class='tweet_content retweets'><span id="r_retweets">0</span> RETWEETS</div>
                 <div class="star star-right"></div>
             </div>
@@ -49,6 +57,7 @@
 
         <section>
             <div class="button">
+                <!-- input area for search request behind cover -->
                 <input type="text" name="search" class="search" id="search_query" placeholder="  Or Hashtag">
             </div>
             <div class="cover">

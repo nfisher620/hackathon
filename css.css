@@ -30,7 +30,7 @@ body {
 #right {
     float: right;
 }
-
+/* re-centered translate and adjusted sizes for better responsive design */
 .tweet {
     position: relative;
     width: 58%;
@@ -40,7 +40,7 @@ body {
     border-radius: 15px;
 }
 
-
+/* on hover set up to make selections pop */
 .left-tweet:hover {
     width: 70%;
     height: 60%;
@@ -48,7 +48,8 @@ body {
     transform: translate(22%, 32%);
     transition: 0.25s linear;
 }
-
+/* added right side animation to be more consistent with design,
+   added second box shadow for a more 3d look */
 .right-tweet:hover {
     width: 70%;
     height: 60%;
@@ -60,12 +61,12 @@ body {
 .tweet_content{
     display:inline-block;
 }
-
+/* set width to 80% for a better fit within the mock up */
 .text {
     width: 80%;
 }
 
-
+/* adjusted for better responsiveness */
 h1{
     font-family: 'Roboto', sans-serif;
     color:white;
@@ -75,9 +76,8 @@ h1{
     top: 0;
     left: 40%;
     position: absolute;
-
 }
-
+/* animating favorite icon */
 .star {
     width: 70px;
     height: 50px;
@@ -90,8 +90,9 @@ h1{
     right: 0;
     bottom: 2%;
     border-radius: 15px;
+    /* left both top and bottom settings in code so we can decide which to use */
 }
-
+/* steps go through twitter's sprite */
 .star:hover {
     background-position: -3519px 0;
     transition: background 1s steps(55);
@@ -133,13 +134,13 @@ h1{
     margin-top: 1%;
     border-radius: 5px;
 }
-
+/* adjusted margin to fit next to input better */
 .btn {
     background-color: #2EC8FA;
     color: white;
     margin-top: 0.7%;
 }
-
+/* using box shadows and background color swap to highlight user selection */
 .active {
     background: #48ACF2;
     box-shadow: -5px 5px 5px black;
@@ -149,9 +150,8 @@ h1{
     background-color: #48ACF2;
     box-shadow: 5px 5px 5px black;
 }
-
+/* animation section for cover drop down effect */
 section, section div {
-    /* See it in slo-mo, you can change this */
     transition-duration: .6s;
 }
 
@@ -168,16 +168,15 @@ section {
     box-shadow: 0 -1px 2px #fff, inset 0 1px 2px rgba(0,0,0,.2), inset 0 .25rem 1rem rgba(0,0,0,.1);
     margin-top: 1%;
 }
-
-
+/* adjusted margin to line up better visually */
 .button { opacity: 0; margin-top: -4%; }
-
+/* changed font to Roboto to match other fonts */
 .cover {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     transform-origin: center bottom;
     transform-style: preserve-3d;
-    font: 1.25em/2 "icon";
+    font: 1.25em/2 "Roboto";
     color: white;
     text-align: center;
     pointer-events: none;
@@ -186,15 +185,14 @@ section {
 
 }
 
-
-
 .innie, .outie, .spine, .shadow { position: absolute; width: 100%; }
-
+/* adjusted border-radius to better match search button */
 .innie, .outie {
     height: 100%;
     background-image: -webkit-linear-gradient(top, transparent 0%, rgba(0,0,0,.1) 100%);
     border-radius: .50rem;
 }
+
 .innie:after, .outie:after { content:"Enter Keyword"; margin-bottom: 1%;}
 
 .innie {
