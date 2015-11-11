@@ -53,7 +53,7 @@ body {
 .right-tweet:hover {
     width: 65%;
     height: 55%;
-    box-shadow: 5px 5px 5px 1px black, 1em 0 0.4em #244458;
+    box-shadow: -5px 5px 5px 1px black, -1em 0 0.4em #244458;
     transform: translate(27%, 35%);
     transition: 0.25s linear;
 }

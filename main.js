@@ -1,5 +1,9 @@
 var debug = true;
-
+/**
+ *
+ * @param {query} the search query that we pass into the twitter API
+ * @param {side} the side that we want to display the tweet on
+ */
 function get_tweet(query, side){
     if(debug) console.log('query is: ',query);
     apis.twitter.getData(query, function(success,response){
@@ -14,7 +18,7 @@ function get_tweet(query, side){
         var english_tweets_arr = [];
 
         for(var i=0; i<response.tweets.statuses.length;i++){//finds all tweets in English and stores in array
-            if(response.tweets.statuses[i].metadata.iso_language == 'en'){
+            if(response.tweets.statuses[i].metadata.iso_language_code == 'en'){
                 english_tweets_arr.push(response.tweets.statuses[i])
             }
         }
@@ -23,26 +27,26 @@ function get_tweet(query, side){
 
         var rand_num1 = Math.floor(Math.random() * english_tweets_arr.length);
 
-        var retweet_count = response.tweets.statuses[rand_num1].retweet_count;
+        var retweet_count = english_tweets_arr[rand_num1].retweet_count;
         if(debug) console.log('retweet count is: ', retweet_count);
 
-        var body_text = response.tweets.statuses[rand_num1].text;
+        var body_text = english_tweets_arr[rand_num1].text;
         if(debug) console.log('body_text is: ', body_text);
 
-        var username = response.tweets.statuses[rand_num1].user.name;
+        var username = english_tweets_arr[rand_num1].user.name;
         if(debug) console.log('username is: ', username);
 
         var new_tweet1 = new Tweet(retweet_count, body_text, username);
 
         var rand_num2 = rand_num1 + 1;
 
-        var retweet_count = response.tweets.statuses[rand_num2].retweet_count;
+        var retweet_count = english_tweets_arr[rand_num2].retweet_count;
         if(debug) console.log('retweet_count is: ', retweet_count);
 
-        var body_text = response.tweets.statuses[rand_num2].text;
+        var body_text = english_tweets_arr[rand_num2].text;
         if(debug) console.log('body_text is: ', body_text);
 
-        var username = response.tweets.statuses[rand_num2].user.name;
+        var username = english_tweets_arr[rand_num2].user.name;
         if(debug) console.log('username is: ', username);
 
         var new_tweet2 = new Tweet(retweet_count, body_text, username);
@@ -57,20 +61,25 @@ function get_tweet(query, side){
         }
     })
 }
-
+/**
+ *
+ * @param {tweet} the new tweet object that is created to be displayed onto the DOM
+ */
 function display_right_tweet(tweet){
     if(debug) console.log('display tweets called');
     $('#r_user').text(tweet.username);
     $('#r_text').text(tweet.body_text);
     $('#r_retweets').text(tweet.retweet_count);}
-
+/**
+ *
+ * @param {tweet} the new tweet object that is created to be displayed onto the DOM
+ */
 function display_left_tweet(tweet){
     if(debug) console.log('display tweets called');
     $('#l_user').text(tweet.username);
     $('#l_text').text(tweet.body_text);
     $('#l_retweets').text(tweet.retweet_count);
 }
-
 
 $(document).ready(function(){
     if(debug) console.log('doc ready');
