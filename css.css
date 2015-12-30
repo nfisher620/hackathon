@@ -23,6 +23,12 @@ body {
     position: relative;
 }
 
+h2 {
+    font-size: 20px;
+    position: relative;
+    top: 21vh;
+}
+
 #left {
     float: left;
 }
@@ -266,3 +272,14 @@ section:hover .shadow {
     transform: rotateX(45deg) scale(.95);
 }
 
+@media screen and (max-width:400px){
+    h1{
+        left: 12%;
+    }
+}
+@media only screen and (max-width: 376px){
+    h1 {
+        left: 25%;
+        font-size: 5em;
+    }
+}
