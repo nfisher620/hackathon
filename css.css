@@ -17,7 +17,7 @@ body {
 .tweet_container {
     width: 50%;
     height: 80%;
-    margin: 10vh 0 0 0;
+    margin: 0vh;
     background-color: #70C3FF;
     border: 1px solid lightgray;
     position: relative;
@@ -79,9 +79,7 @@ h1{
     text-shadow: 2px 2px black;
     letter-spacing:2px;
     font-size:3em;
-    top: 0;
-    left: 40%;
-    position: absolute;
+    text-align:center;
 }
 /* animating favorite icon */
 .star {
@@ -148,12 +146,12 @@ h1{
 }
 /* using box shadows and background color swap to highlight user selection */
 .active {
-    background: #48ACF2;
+    background: #0066ff;
     box-shadow: -5px 5px 5px black;
 }
 
 .r-active {
-    background-color: #48ACF2;
+    background-color: #0066ff;
     box-shadow: 5px 5px 5px black;
 }
 /* animation section for cover drop down effect */
